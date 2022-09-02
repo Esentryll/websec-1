@@ -5,19 +5,19 @@
 </head>
 
 <body>
-    <div class="row centerAlign">
-        <input type ="text" id="input1" class = "valueInput"/>
-        <select id="select1" class = "selectInput">
+    <div class="row centerAlign color">
+        <input type ="text" id="input1" class = "valueInput color border" required pattern="^[ 0-9]+$"/>
+        <select id="select1" class = "selectInput color border">
             <option value ="plus">+</option>
             <option value ="minus">-</option>
             <option value ="mult">*</option>
             <option value ="div">/</option>
         </select>
-        <input type ="text" id="input2" class = "valueInput"/>
+        <input type ="text" id="input2" class = "valueInput color border" required pattern="^[ 0-9]+$"/>
     </div>
 
-    <button class ="row button" id = "button1" onClick="buttonClickHandler();">подсчитать</button>
+    <button class ="row button color border" id = "button1" onClick="buttonClickHandler();">подсчитать</button>
 
-    <textarea class = "row resultArea" id="results"></textarea>
+    <textarea class = "row resultArea centerAlign color border" id="results"></textarea>
 </body>
 </html>
