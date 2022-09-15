@@ -1,3 +1,5 @@
+var pastResult =0;
+
 function buttonClickHandler()
 {
     let selectorElem = document.getElementById("select1");
@@ -6,22 +8,26 @@ function buttonClickHandler()
     let value1 = document.getElementById("input1").value;
     let value2 = document.getElementById("input2").value;
 
-    var result;
+    var result = 0;
     switch (selectorElem.value){
         case 'plus':
             result = parseFloat(value1) + parseFloat(value2);
             break;
         case 'minus':
-            result = parseFloat(value1) - parseFloat(value2);
-            break;
+            if (value1>value2){
+                result = parseFloat(value1) - parseFloat(value2);
+                break;
+            }
         case 'mult':
             result = parseFloat(value1) * parseFloat(value2);
             break;
         case 'div':
-            result = parseFloat(value1) / parseFloat(value2);
-            break;
+            if (value2!=0){
+                result = parseFloat(value1) / parseFloat(value2);
+                break;
+            }
     }
-
-    document.getElementById("results").innerText = result;
+    document.getElementById("results").textContent = result;
+    pastResult = result;
     console.log(value1,value2)
 }
